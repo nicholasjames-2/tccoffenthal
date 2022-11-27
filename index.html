@@ -7,9 +7,19 @@
     <meta name="author" content="Nichoas Bennett, Mikel Graf">
     <meta name="generator" content="Hugo 0.101.0">
     <title>TTC Offenthal</title>
+    <link rel="icon" type="image/x-icon" href="/img/icon.png">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+      body {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -69,8 +79,9 @@
   <body>
     <!-- NavBar -->
     <div class="container">
-        <header class="d-flex justify-content-center py-3">
-          <ul class="nav nav-pills">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+            <img id = "Logo" src = "img/logo.png" height="100" width="100"> 
             <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Startseite</a></li>
             <li class="nav-item"><a href="news.php" class="nav-link">Neuigkeiten</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">Wir über uns</a></li>
@@ -79,7 +90,15 @@
           </ul>
         </header>
       </div>
+      <!--darkmode-->
+      <button onclick="myFunction()">Toggle dark mode</button>
 
+      <script>
+      function myFunction() {
+         var element = document.body;
+         element.classList.toggle("dark-mode");
+      }
+      </script>
     <!-- Slider -->
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -133,11 +152,10 @@
       </div>
       <!-- FOOTER -->
       <footer class="container">
-        <p>&copy; 2022 TTC Offenthal &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutzerklaerung.html">Datenschutzerklärung</a></p>
+        <p>&copy; 2022 TTC Offenthal &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutzerklaerung.html">Datenschutzerklärung</a> 
+          <a href="https://www.instagram.com/ttc_offenthal/?igshid=YmMyMTA2M2Y%3D" target="_blank">  <img id = "Instagram" src = "img/instagramIcon.png" height="30" width="30"> </a></p>
       </footer>
     </main>
-    
-    
         <script src="js/bootstrap.bundle.min.js"></script>
     
   </body>
