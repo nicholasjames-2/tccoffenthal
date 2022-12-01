@@ -61,6 +61,7 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      table,th,td{border:1px solid #cccccc}
     </style>
 
     <!-- Custom styles for this template -->
@@ -78,17 +79,11 @@
                 <li class="nav-item"><a href="about.html" class="nav-link">Wir über uns</a></li>
                 <li class="nav-item"><a href="trainingszeiten.html" class="nav-link active" aria-current="page">Trainingszeiten</a></li>
                 <li class="nav-item"><a href="anfahrt.html" class="nav-link">Anfahrtsskizze</a></li>
-                  <div class="switch">
-                    <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
-                        <div class="slider round"></div>
-                    </label>
-                </div>
               </ul>
         </header>
       </div>
       <!-- HERO -->
-      <div class="px-4 py-5 my-5 text-center">
+      <div class="text-center">
         <h1 class="display-5 fw-bold">Trainingszeiten</h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4"><h2>Unsere Trainingszeiten außerhalb der Ferien</h2></p>
@@ -96,30 +91,34 @@
         <div>
           <table class="table">
               <tr>
-                <th scope="col"></th>
-                <th scope="col">Jugend</th>
-                <th scope="col">Erwachsene</th>
+                <th></th>
+                <th>Jugend</th>
+                <th>Erwachsene</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Montag</th>
+                <th>Montag</th>
                 <td>18:00 - 20:00</td>
                 <td>20:00 - 21:00</td>
               </tr>
               <tr>
-                <th scope="row">Mittwoch</th>
+                <th>Mittwoch</th>
                 <td>-</td>
                 <td>19:30 - 22:00</td>
               </tr>
               <tr>
-                <th scope="row">Freitag</th>
+                <th>Freitag</th>
                 <td>18:00 - 19:30</td>
                 <td>19:30 - 22:00</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="lead mb-4">
+          Während der hessischen Schulferien steht lediglich der <b>Mittwoch</b> zum Training zur Verfügung.<br>
+          Ebenfalls findet <b>kein Training an beweglichen Ferientagen</b> statt.
+        </p>
       </div>
       <!-- FOOTER -->
       <footer class="container">
