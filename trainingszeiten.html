@@ -61,91 +61,6 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
-      
-/* dark-mode*/
-html {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    height: 100%;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    background: none;
-    background-color: var(--bg-color);
-    top: 150px;
-}
-
- :root {
-
-    --font-color: #0f0f0f;
-    --bg-color: #fefefe;
-
-}
-
-[data-theme="dark"] {
-
-    --font-color: #fefefe;
-    --bg-color: #121212;
-}
-
-.switch {
-    height: 100px;
-    position: fixed;
-    right: 50px;
-    top: 50px;
-}
-    
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-}
-
-.theme-switch input {
-  display:none;
-}
-
-.slider {
-  background-color: #ccc;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
-}
-
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
-  content: "";
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: .4s;
-  width: 26px;
-}
-
-input:checked + .slider {
-  background-color: #2b2b2b;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
     </style>
 
     <!-- Custom styles for this template -->
@@ -172,36 +87,11 @@ input:checked + .slider:before {
               </ul>
         </header>
       </div>
-      <!--darkmode-->
-      <script>
-      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
-}
-
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {        document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light');
-    }    
-}
-
-toggleSwitch.addEventListener('change', switchTheme, false);
-</script>
       <!-- HERO -->
       <div class="px-4 py-5 my-5 text-center">
         <h1 class="display-5 fw-bold">Trainingszeiten</h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <p class="lead mb-4"><h2>Unsere Trainingszeiten außerhalb der Ferien</h2></p>
         </div>
         <div>
           <table class="table">
