@@ -11,15 +11,6 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-       body {
-  background-color: white;
-  color: black;
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -70,58 +61,84 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
-      .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+      
+/* dark-mode*/
+html {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 100%;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    background: none;
+    background-color: var(--bg-color);
+    top: 150px;
 }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
+ :root {
+
+    --font-color: #0f0f0f;
+    --bg-color: #fefefe;
+
+}
+
+[data-theme="dark"] {
+
+    --font-color: #fefefe;
+    --bg-color: #121212;
+}
+
+.switch {
+    height: 100px;
+    position: fixed;
+    right: 50px;
+    top: 50px;
+}
+    
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
+  background-color: #fff;
+  bottom: 4px;
   content: "";
   height: 26px;
-  width: 26px;
   left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
+  position: absolute;
   transition: .4s;
+  width: 26px;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  background-color: #2b2b2b;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
@@ -146,22 +163,40 @@ input:checked + .slider:before {
                 <li class="nav-item"><a href="about.html" class="nav-link">Wir über uns</a></li>
                 <li class="nav-item"><a href="trainingszeiten.html" class="nav-link active" aria-current="page">Trainingszeiten</a></li>
                 <li class="nav-item"><a href="anfahrt.html" class="nav-link">Anfahrtsskizze</a></li>
-                <li><label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label></li>
+                  <div class="switch">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
               </ul>
         </header>
       </div>
       <!--darkmode-->
-      <button onclick="myFunction()">Toggle dark mode</button>
-
       <script>
-      function myFunction() {
-         var element = document.body;
-         element.classList.toggle("dark-mode");
-      }
-      </script>
+      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {        document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+</script>
       <!-- HERO -->
       <div class="px-4 py-5 my-5 text-center">
         <h1 class="display-5 fw-bold">Trainingszeiten</h1>
